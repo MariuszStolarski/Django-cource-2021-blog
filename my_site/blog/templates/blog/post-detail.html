@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title_block %}
-    This Post Content
+    {{ post.title }}
 {% endblock  %}
 
 {% block css_file_block %}
@@ -12,24 +12,21 @@
 
 {% block body_block %}
     <section id="summary">
-        <h2>Post Titile</h2>
+        <h2>{{ post.title }}</h2>
 
         <article>
-            <img src="{% static "blog/images/mountains.jpg" %}" alt="Post Title" />
+            <img src="{% static "blog/images/"|add:post.image %}" alt="{{ post.title }}" />
             <address>
-                By Max
+                {{ post.address }}
             </address>
             <div>
-                Last updated <time>July 10th</time>
+                Last updated <time>{{ post.date }}</time>
             </div>
         </article>
     </section>
     <main>
         <p>
-            {% lorem 1 b random %}
-            {% lorem 3 b random %}
-            {% lorem 2 b random %}
-            {% lorem 5 b random %}
+            {{ post.content }}
         </p>
     </main>
 {% endblock %}
