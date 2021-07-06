@@ -6,21 +6,12 @@
 {% endblock  %}
 
 {% block css_file_block %}
-    <link rel="stylesheet" href="{% static "blog/index.css" %}" />
-    <link rel="stylesheet" href="{% static "blog/all-posts.css" %}" />
     <link rel="stylesheet" href="{% static "blog/post.css" %}" />
     <link rel="stylesheet" href="{% static "blog/post-detail.css" %}" />
+    <link rel="stylesheet" href="{% static "blog/index.css" %}" />
 {% endblock %}
 
 {% block body_block %}
-    <header id="main-navigation">
-        <h1>
-            <a href="">My Blog</a>
-        </h1>
-        <nav>
-            <a href="">All blogs</a>
-        </nav>
-    </header>
 
     <section id="welcome">
         <header>
@@ -33,17 +24,7 @@
     <section id="latest-posts">
         <h2>The latest post</h2>
         <ul>
-            <li>
-                <article class="post">
-                    <a href="">
-                        <img src="{% static "blog/images/mountains.jpg" %}" alt="Montain Hiking" />
-                    </a>
-                    <div class="post__content">
-                        <h3>Montain Hiking</h3>
-                        <p>There is nothing like the views you get hiking on the montains</p>
-                    </div>
-                </article>
-            </li>
+            {% include "blog/includes/post.html" %}
         </ul>
     </section>
 

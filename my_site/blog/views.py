@@ -7,9 +7,9 @@ def starting_page(request):
 
 # view functionfor the "../posts" request
 def posts(request):
-    pass
+    return render(request, "blog/all-posts.html")
 
 
 # view functionfor the "../posts/a-slug-variable" request
-def post_details(request):
-    pass
+def post_details(request, a_slug_variable):
+    return render(request, "blog/post-detail.html")

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title_block %}
+    This Post Content
+{% endblock  %}
+
+{% block css_file_block %}
+    <link rel="stylesheet" href="{% static "blog/post-detail.css" %}" />
+{% endblock %}
+
+{% block body_block %}
+    <section id="summary">
+        <h2>Post Titile</h2>
+
+        <article>
+            <img src="{% static "blog/images/mountains.jpg" %}" alt="Post Title" />
+            <address>
+                By Max
+            </address>
+            <div>
+                Last updated <time>July 10th</time>
+            </div>
+        </article>
+    </section>
+    <main>
+        <p>
+            {% lorem 1 b random %}
+            {% lorem 3 b random %}
+            {% lorem 2 b random %}
+            {% lorem 5 b random %}
+        </p>
+    </main>
+{% endblock %}
