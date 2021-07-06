@@ -7,7 +7,7 @@ damy_posts = [
         "slug" : "hike-in-the-mountains",
         "image" : "mountains.jpg",
         "author" : "Maks",
-        "data" : date(2021,7,6),
+        "date" : date(2021,7,6),
         "title" : "Mountain Hiking",
         "excerpt" : "There is nothing like the views you get hiking on the montains.",
         "content" : "{{ lorem 5 b random }}"
@@ -16,7 +16,7 @@ damy_posts = [
         "slug" : "this-is-coding",
         "image" : "coding.jpg",
         "author" : "Maks",
-        "data" : date(2021,6,2),
+        "date" : date(2021,6,2),
         "title" : "My Codding",
         "excerpt" : "There is nothing like codding.",
         "content" : "{% lorem 6 b random %}"
@@ -25,7 +25,7 @@ damy_posts = [
         "slug" : "this-is-wood",
         "image" : "woods.jpg",
         "author" : "Maks",
-        "data" : date(2020,10,9),
+        "date" : date(2020,10,9),
         "title" : "My woods",
         "excerpt" : "Wood is the wood.",
         "content" : "{% lorem 4 b random %}"
@@ -101,7 +101,7 @@ def get_date(post):
 
 # view function for the "../" request
 def starting_page(request):
-    #soreted_posts = sorted(damy_posts, key=get_date)
+    soreted_posts = sorted(damy_posts, key=get_date)
     latest_posts = damy_posts[-3:] # takes only 3 latest items from the list
     return render(request, "blog/index.html", {
         "posts" : latest_posts
